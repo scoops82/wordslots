@@ -1,3 +1,7 @@
+/// Import in keen-slider
+import keenSlider from 'https://cdn.skypack.dev/keen-slider';
+
+/// Random number generator (at the top of the page)
 (function () {
   "use strict";
 
@@ -89,3 +93,84 @@
 
   init();
 })();
+
+/// create the slider 1_1
+const slider_1_1 = new keenSlider("#ks-player1-1", {
+  loop: true,
+  created: () => {
+    console.log("created");
+  },
+  slides: {
+    perView: 1,
+  },
+  drag: false,
+  // selector: null,
+  vertical: true,
+  // initial: 5,
+  // range: {
+  //   min: 0,
+  //   max: 9,
+  // },
+});
+
+const slider_1_2 = new keenSlider("#ks-player1-2", {
+  loop: true,
+  created: () => {
+    console.log("created");
+  },
+  slides: {
+    perView: 1,
+  },
+  drag: false,
+  // selector: null,
+  vertical: true,
+  // initial: 5,
+  // range: {
+  //   min: 0,
+  //   max: 9,
+  // },
+});
+
+const slider_1_3 = new keenSlider("#ks-player1-3", {
+  loop: true,
+  created: () => {
+    console.log("created");
+  },
+  slides: {
+    perView: 1,
+  },
+  drag: false,
+  // selector: null,
+  vertical: true,
+  // initial: 5,
+  // range: {
+  //   min: 0,
+  //   max: 9,
+  // },
+});
+
+console.dir(slider_1_1)
+
+// Get the ks-player1-1-full-roll element
+const ks_player1_1_full_roll = document.querySelector("#ks-player1-1-full-roll");
+const ks_player1_1_nudge = document.querySelector("#ks-player1-1-nudge");
+
+/// Create a random number generator that selects a number between 0 and 9
+ks_player1_1_full_roll.addEventListener("click", () => {
+  let ksPlayer1Index = 0;
+  ksPlayer1Index = Math.floor(Math.random() * 10);
+  slider_1_1.moveToIdx(ksPlayer1Index
+  , true);
+  console.log("🚀 ~ file: main.js ~ line 125 ~ ks_player1_1_full_roll.addEventListener ~ ksPlayer1Index", ksPlayer1Index)
+});
+
+// Add event listener to the ks-player1-1-nudge element that will trigger the slider to go to the next slide
+ks_player1_1_nudge.addEventListener("click", () => {
+  slider_1_1.next();
+});
+  
+
+
+
+
+
