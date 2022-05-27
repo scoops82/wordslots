@@ -101,11 +101,11 @@ const slider_1_1 = new keenSlider("#ks-player1-1", {
     console.log("created");
   },
   slides: {
-    origin: "centre",
     perView: 1,
   },
+  drag: false,
   // selector: null,
-  // vertical: true,
+  vertical: true,
   // initial: 5,
   // range: {
   //   min: 0,
@@ -113,25 +113,26 @@ const slider_1_1 = new keenSlider("#ks-player1-1", {
   // },
 });
 
-console.log(slider_1_1.track.details.abs)
+console.dir(slider_1_1)
 
 // Get the ks-player1-1-full-roll element
 const ks_player1_1_full_roll = document.querySelector("#ks-player1-1-full-roll");
-
-// console.dir(slider_1_1);
+const ks_player1_1_nudge = document.querySelector("#ks-player1-1-nudge");
 
 /// Create a random number generator that selects a number between 0 and 9
 ks_player1_1_full_roll.addEventListener("click", () => {
   let ksPlayer1Index = 0;
   ksPlayer1Index = Math.floor(Math.random() * 10);
-  slider_1_1.moveToIdx(ksPlayer1Index, false, {
-    duration: 0.5,
-    easing: "ease-in-out",
-  });
+  slider_1_1.moveToIdx(ksPlayer1Index
+  , true);
   console.log("🚀 ~ file: main.js ~ line 125 ~ ks_player1_1_full_roll.addEventListener ~ ksPlayer1Index", ksPlayer1Index)
-  console.log(slider_1_1.track.details.abs);
 });
 
+// Add event listener to the ks-player1-1-nudge element that will trigger the slider to go to the next slide
+ks_player1_1_nudge.addEventListener("click", () => {
+  slider_1_1.next();
+});
+  
 
 
 
