@@ -94,8 +94,44 @@ import keenSlider from 'https://cdn.skypack.dev/keen-slider';
   init();
 })();
 
-/// create the slider
+/// create the slider 1_1
 const slider_1_1 = new keenSlider("#ks-player1-1", {
+  loop: true,
+  created: () => {
+    console.log("created");
+  },
+  slides: {
+    perView: 1,
+  },
+  drag: false,
+  // selector: null,
+  vertical: true,
+  // initial: 5,
+  // range: {
+  //   min: 0,
+  //   max: 9,
+  // },
+});
+
+const slider_1_2 = new keenSlider("#ks-player1-2", {
+  loop: true,
+  created: () => {
+    console.log("created");
+  },
+  slides: {
+    perView: 1,
+  },
+  drag: false,
+  // selector: null,
+  vertical: true,
+  // initial: 5,
+  // range: {
+  //   min: 0,
+  //   max: 9,
+  // },
+});
+
+const slider_1_3 = new keenSlider("#ks-player1-3", {
   loop: true,
   created: () => {
     console.log("created");
